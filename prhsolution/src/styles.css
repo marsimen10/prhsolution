@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+:host ::ng-deep .p-button {
+  margin: 0 .5rem 0 0;
+  min-width: 10rem;
+
+}
+
+p {
+  margin: 0;
+}
+
+.confirmation-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:host ::ng-deep .p-dialog .p-button {
+  min-width: 6rem;
+}
+
+.p-dialog .p-dialog-header {
+  background: #E7E8E8 !important;
+}
+
+i {
+  cursor: pointer;
+}

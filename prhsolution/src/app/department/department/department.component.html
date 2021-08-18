@@ -1,0 +1,85 @@
+<br> <br>
+<div class="container-lg ">
+
+<!----------------- title-------------------------->
+
+<div class="uk-background-muted uk-text-center 	" style="height: 80px">
+
+  <h1 style="padding: 15px"> DEPARTMENTS</h1>
+
+</div>
+
+<br> <br>
+
+<div class="uk-card uk-card-default uk-card-large uk-card-body">
+  <!----------------- button create department---------------->
+
+  <i placement="top" ngbTooltip="Ajouter" class="pi pi-plus-circle" (click)="showAddDepartment()" style="float: right ; font-size: 2rem ; color: crimson"></i>
+
+  <!----------------- list department---------------->
+
+  <table class="uk-table uk-table-hover uk-table-divider ">
+    <thead>
+
+    <tr>
+
+      <th class="uk-text-capitalize	">nom department</th>
+      <th class="uk-text-capitalize	">description de department</th>
+      <th class="uk-text-capitalize	">nom societe</th>
+
+    </tr>
+
+    </thead>
+
+    <tbody>
+
+    <tr *ngFor="let department of departments  ">
+
+      <td>{{department.nameDepartment}}</td>
+      <td>{{department.wordingDepartment}}</td>
+      <td>{{department.company.nameCompany}}</td>
+      <!----------------- button update department---------------->
+      <td>
+        <i placement="top" ngbTooltip="Modifier" (click)="showEditDepartment(department)" class="pi pi-pencil"
+           style="color: #dc143c"></i>
+      </td>
+
+    </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
+</div>
+
+<p-dialog [header]="title" [(visible)]="displayDepartmentModal" [style]="{width: '50vw'}" [baseZIndex]="10000">
+
+  <ng-template pTemplate="body">
+
+    <br>
+
+    <input type="text" class="form-control padding-form  margin-button " [(ngModel)]="department.nameDepartment"
+           id="nameDepartment" placeholder="nameDepartment" name="nameDepartment" required>
+    <br>
+
+    <input type="text" class="form-control padding-form  margin-button " [(ngModel)]="department.wordingDepartment"
+           id="wordingDepartment" placeholder="wordingDepartment" name="wordingDepartment" required>
+    <br>
+
+    <select class="form-select form-select-sm" aria-label=".form-select-sm example" [(ngModel)]="department.company">
+      <option *ngFor=" let company of companies " [ngValue]="company">
+        {{company.nameCompany}}
+      </option>
+    </select>
+
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+
+    <button pButton type="button" label="Cancel" (click)="closeDepartmentModal()" class="p-button-secondary"></button>
+    <button pButton type="button" label="Save" (click)="saveDepartment()" class="p-button-danger"></button>
+
+  </ng-template>
+</p-dialog>
+

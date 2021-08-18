@@ -1,0 +1,75 @@
+<br> <br>
+<div class="container-lg ">
+
+  <!----------------- title----------------->
+  <div class="uk-background-muted uk-text-center 	" style="height: 80px">
+
+    <h1 style="padding: 15px"> SOCIETES</h1>
+
+  </div>
+  <br> <br>
+  <div class="uk-card uk-card-default uk-card-large uk-card-body">
+
+    <!----------------- button create company----------------->
+
+    <i placement="top" ngbTooltip="Ajouter" class="pi pi-plus-circle"
+
+       (click)="showAddCompany()" style="float: right ; font-size: 2rem ; color: crimson"></i>
+
+    <!----------------- list company----------------->
+
+    <table class="uk-table uk-table-hover uk-table-divider">
+
+      <thead>
+
+      <tr>
+
+        <th class="uk-text-capitalize	">name</th>
+        <th class="uk-text-capitalize	">City</th>
+        <th class="uk-text-capitalize	">Pays</th>
+
+      </tr>
+
+      </thead>
+
+      <tbody>
+
+      <tr *ngFor="let company of companies  ">
+
+        <td> {{company.nameCompany}}</td>
+        <td> {{company.city}}</td>
+        <td> {{company.pays}} </td>
+        <td> {{company.idCompany}} </td>
+        <td>
+          <!----------------- button update company----------------->
+          <i placement="top" ngbTooltip="Modifier" class="pi pi-pencil" (click)="showEditCompany(company)" style="color: #dc143c"></i>
+        </td>
+
+      </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+<p-dialog [header]="title" [(visible)]="displayCompanyModal" [style]="{width: '50vw'}"
+          [baseZIndex]="10000">
+  <ng-template pTemplate="body">
+    <input type="text" class="form-control padding-form  margin-button " id="name" placeholder="name" name="name"
+           required [(ngModel)]="company.nameCompany">
+    <br>
+    <input type="text" class="form-control padding-form  margin-button " id="city" placeholder="city" name="city"
+           required [(ngModel)]="company.city">
+    <br>
+    <input type="text" class="form-control padding-form  margin-button " id="pays" placeholder="pays" name="pays"
+           required [(ngModel)]="company.pays">
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <button pButton type="button" label="Cancel" class="p-button-secondary" (click)="closeCompanyModal()"></button>
+    <button pButton type="button" label="Save" class="p-button-danger" (click)="saveCompany()"></button>
+  </ng-template>
+</p-dialog>

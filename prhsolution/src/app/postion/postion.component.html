@@ -1,0 +1,79 @@
+<br> <br>
+<div class="container-lg ">
+
+
+
+<!----------------- title-------------------------->
+
+<div class="uk-background-muted uk-text-center 	" style="height: 80px">
+
+  <h1 style="padding: 15px"> POSITIONS</h1>
+
+</div>
+<br> <br>
+
+<div class="uk-card uk-card-default uk-card-large uk-card-body">
+
+  <!----------------- button create position---------------->
+
+  <i placement="top" ngbTooltip="Ajouter" class="pi pi-plus-circle" (click)="showAddPosition()" style="float: right ; font-size: 2rem ; color: crimson"></i>
+
+  <!----------------- list position---------------->
+  <table class="uk-table uk-table-hover uk-table-divider">
+    <thead>
+
+    <tr >
+
+      <th class="uk-text-capitalize	">nom Position</th>
+      <th class="uk-text-capitalize	">experience de Position</th>
+      <th class="uk-text-capitalize	">nom de department</th>
+
+    </tr>
+
+    </thead>
+
+    <tbody>
+
+    <tr *ngFor="let position of positions  ">
+
+      <td>{{position.namePosition}}</td>
+      <td>{{position.experiencePosition}}</td>
+      <td>{{position.department.nameDepartment}}</td>
+
+      <!----------------- button update position---------------->
+      <td>
+        <i placement="top" ngbTooltip="Modifier"   (click)="showEditPosition(position)" class="pi pi-pencil"
+           style="color: #dc143c"></i>
+      </td>
+
+    </tr>
+
+    </tbody>
+
+  </table>
+</div>
+</div>
+
+<p-dialog [header]="title" [(visible)]="displayPositionModal" [style]="{width: '50vw'}"
+          [baseZIndex]="10000">
+  <ng-template pTemplate="body">
+    <br>
+    <input type="text" class="form-control padding-form  margin-button " [(ngModel)]="position.namePosition" id="namePosition" placeholder="namePosition" name="namePosition" required >
+    <br>
+
+    <input type="text" class="form-control padding-form  margin-button " [(ngModel)]="position.experiencePosition" id="experiencePosition" placeholder="experiencePosition" name="experiencePosition" required >
+    <br>
+    <select  class="form-select form-select-sm" aria-label=".form-select-sm example"  [(ngModel)]="position.department" >
+      <option *ngFor=" let department of departments " [ngValue]="department"   >
+        {{department.nameDepartment}}
+      </option>
+    </select>
+
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <button pButton type="button" label="Cancel"  (click)="closePositionModal()" class="p-button-secondary"  ></button>
+    <button pButton type="button" label="Save" (click)="savePosition()" class="p-button-danger"  ></button>
+  </ng-template>
+</p-dialog>
+

@@ -1,0 +1,60 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-danger">
+  <div class="uk-navbar-left" >
+    <ul class="uk-navbar-nav" style="margin: 30px ">
+      <li><a  uk-toggle="target: #offcanvas-push"><span class="text-light" uk-icon=" icon:menu ; ratio: 2.5"></span>
+        </a>
+      </li>
+      <li  class="uk-active" style="margin-left: 30px ; padding: 18px">
+        <h2 class="navbar-nav me-auto mb-2 mb-lg-0 text-light ">RHSOLUTION</h2>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div id="offcanvas-push" uk-offcanvas="mode: push; overlay:true">
+  <div class="uk-offcanvas-bar uk-background-muted ">
+    <button class="uk-offcanvas-close" type="button" uk-close></button>
+    <a  class="text-dark "  style="font-size: 22px" href="#"><span class="uk-margin-small-right text-dark " uk-icon="icon: home ; ratio:1.5"> </span> Acceuil</a>
+    <ul class="uk-nav uk-nav-primary uk-margin-auto-vertical">
+      <br>
+      <ul class="uk-nav-parent-icon" uk-nav="multiple: true  uk-active">
+        <li class="uk-parent ">
+          <a href="#" class="text-dark" style="font-size: 22px">
+            <span class="uk-margin-small-right  text-dark" uk-icon="icon: cog ; ratio:1.5"></span> Administration </a>
+          <ul class="uk-nav-sub">
+            <li><a class=" text-dark " href="#">Sub item</a></li>
+            <li><a  class=" text-dark " href="#">Sub item</a></li>
+          </ul>
+        </li>
+      </ul>
+      <br>
+      <ul class="uk-nav-parent-icon" uk-nav="multiple: true">
+        <li class="uk-parent">
+          <a  class="text-dark " style="font-size: 22px" href="#"> <span  class="uk-margin-small-right  text-dark" uk-icon="icon: grid ; ratio:1.5"></span>Organisation </a>
+          <ul class="uk-nav-sub ">
+            <li><a class=" text-dark " style="font-size: 18px" routerLink="company">  <span  class="uk-margin-small-right  text-dark" uk-icon="icon: home ; ratio:1.3"></span> Sociétés</a></li>
+            <li><a class=" text-dark " style="font-size: 18px" routerLink="department">  <span  class="uk-margin-small-right  text-dark" uk-icon="icon: thumbnails ; ratio:1.3"></span> gestion des departements</a></li>
+            <li><a class=" text-dark " style="font-size: 18px" routerLink="position">  <span  class="uk-margin-small-right  text-dark" uk-icon="icon:  album ; ratio:1.3"></span> positions</a></li>
+            <li><a class=" text-dark " style="font-size: 18px" routerLink="mission">  <span  class="uk-margin-small-right  text-dark" uk-icon="icon:  tablet-landscape ; ratio:1.3"></span> missions</a></li>
+
+
+
+          </ul>
+        </li>
+      </ul>
+      <br>
+      <ul class="uk-nav-parent-icon" uk-nav="multiple: true">
+        <li class="uk-parent">
+          <a class=" text-dark " style="font-size: 22px" href="#"> <span  class="uk-margin-small-right  text-dark" uk-icon="icon: nut ; ratio:1.5"></span>  Gestion des Positions </a>
+          <ul class="uk-nav-sub">
+            <li><a href="#">Sub item</a></li>
+            <li><a href="#">Sub item</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </ul>
+
+
+  </div>
+</div>
